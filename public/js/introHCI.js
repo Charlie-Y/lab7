@@ -50,6 +50,8 @@ function initializePage() {
 				$.post('/project/'+idNumber+'/delete', function() {
 					window.location.href = '/';
 				});
+				e.preventDefault();
+				return false;
 			});
 		}
 
@@ -70,7 +72,7 @@ function initializePage() {
 			'summary': summary
 		};
 		$.post('/project/new', json, function() {
-			window.location.href = '/'; // reload the page
+			window.location.href = '/'; // reload the page. 
 		});
 	});
 }
